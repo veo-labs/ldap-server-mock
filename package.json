@@ -1,0 +1,42 @@
+{
+  "name": "ldap-server-mock",
+  "version": "1.0.0",
+  "description": "Simple mock for LDAP server",
+  "keywords": [
+    "ldap",
+    "mock",
+    "sso",
+    "veo-labs"
+  ],
+  "homepage": "https://github.com/veo-labs/ldap-server-mock",
+  "bugs": {
+    "url": "https://github.com/veo-labs/ldap-server-mock/issues"
+  },
+  "license": "AGPL-3.0",
+  "author": "Veo-Labs <info@veo-labs.com> (http://www.veo-labs.com/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/veo-labs/ldap-server-mock.git"
+  },
+  "dependencies": {
+    "asn1": "0.2.3",
+    "ldapjs": "1.0.1",
+    "nopt": "4.0.1"
+  },
+  "devDependencies": {
+    "grunt": "1.0.1",
+    "grunt-cli": "1.2.0",
+    "grunt-eslint": "20.1.0",
+    "pre-commit": "1.2.2"
+  },
+  "scripts": {
+    "eslint": "grunt eslint"
+  },
+  "precommit": [
+    "eslint"
+  ],
+  "engines": {
+    "node": ">=7.4.0",
+    "npm": ">=4.0.5"
+  }
+}
