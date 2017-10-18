@@ -19,7 +19,7 @@ With:
 
 **Nb:** If process is launched as a sub process it will send a message to its parent process when starting:
 
-```json
+```js
 {status: 'started'}
 ```
 
@@ -27,7 +27,7 @@ With:
 
 The server configuration must be a simple JSON file.
 
-```json
+```js
 {
   "port": 3004, // The port the server will listen to (default to 3004)
   "userLoginAttribute": "cn", // The name of the LDAP attribute holding the user login (default to cn)
@@ -41,7 +41,7 @@ The server configuration must be a simple JSON file.
 The database user must be a simple JSON file containing an array of users. Each user must have an attribute used to authenticate himself with the same name as defined by server configuration **userLoginAttribute**.
 A user can also have any number of other attributes which will all be returned.
 
-```json
+```js
 [
   {
     "dn": "cn=user,dc=test", // A valid DN (Distinguished Name)
