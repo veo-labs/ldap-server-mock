@@ -2,11 +2,11 @@
 
 Really simple basic mock for [LDAP server](https://tools.ietf.org/html/rfc4511). Use it to mock an LDAP server for authenticating applications. This should not be used in production environment, it is just for test purpose, nothing more.
 
-# Install
+## Install
 
     npm install ldap-server-mock
 
-# Usage
+## Usage
 
 Start a fake LDAP server with the following command:
 
@@ -23,7 +23,7 @@ With:
 {status: 'started'}
 ```
 
-## Server configuration
+### Server configuration
 
 The server configuration must be a simple JSON file.
 
@@ -36,7 +36,7 @@ The server configuration must be a simple JSON file.
 }
 ```
 
-## LDAP users
+### LDAP users
 
 The database user must be a simple JSON file containing an array of users. Each user must have an attribute used to authenticate himself with the same name as defined by server configuration **userLoginAttribute**.
 A user can also have any number of other attributes which will all be returned.
@@ -53,10 +53,18 @@ A user can also have any number of other attributes which will all be returned.
 ]
 ```
 
-# Contributors
+## Docker
+
+Sample `Dockerfile` is provided. Just build and run your image with:
+
+```docker build --tag=ldap-server-mock .```
+
+```docker run -p 3004:3004 -v ${path_of_json_conf}:/conf ldap-server-mock node server.js --conf=/conf/ldap-server-mock-conf.json --database=/conf/users.json```
+
+## Contributors
 
 Maintainer: [Veo-Labs](http://www.veo-labs.com/)
 
-# License
+## License
 
 [AGPL](http://www.gnu.org/licenses/agpl-3.0.en.html)
