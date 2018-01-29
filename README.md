@@ -29,7 +29,7 @@ The server configuration must be a simple JSON file.
 
 ```js
 {
-  "port": 3004, // The port the server will listen to (default to 3004)
+  "port": 3890, // The port the server will listen to (default to 3890)
   "userLoginAttribute": "cn", // The name of the LDAP attribute holding the user login (default to cn)
   "searchBase": "dc=test", // The search base used by the client to fetch user trying to connect (default to dc=test)
   "searchFilter": "(&(objectclass=person)(cn={{username}}))" // The search filter used to fetch user trying to connect with the placeholder {{username}} (default to (&(objectclass=person)(cn={{username}})))

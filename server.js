@@ -27,7 +27,7 @@ try {
 conf.server.userLoginAttribute = conf.server.userLoginAttribute || 'cn';
 conf.server.searchFilter = conf.server.searchFilter || '(&(objectclass=person)(cn={{username}}))';
 conf.server.searchBase = conf.server.searchBase || 'dc=test';
-conf.server.port = conf.server.port || 3004;
+conf.server.port = conf.server.port || 3890;
 
 if (!conf.server.searchBase)
   throw new Error('Missing searchBase property in configuration');
