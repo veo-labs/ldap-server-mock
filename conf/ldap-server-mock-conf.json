@@ -1,0 +1,6 @@
+{
+  "port": 3890,
+  "userLoginAttribute": "cn",
+  "searchBase": "",
+  "searchFilter": "(cn={{username}})"
+}
