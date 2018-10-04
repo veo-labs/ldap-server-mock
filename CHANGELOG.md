@@ -1,4 +1,8 @@
-# 1.0.1 / YYYY-MM-DD
+# 1.1.0 / YYYY-MM-DD
+
+## NEW FEATURES
+
+- Add NPM package-lock.json file
 
 ## BUG FIXES
 
