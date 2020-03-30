@@ -7,6 +7,7 @@
 ## DEPENDENCIES
 
 - **asn1** has been removed, it wasn't used directly
+- **ldapjs** has been upgraded from 1.0.1 to **1.0.2**
 
 # 2.0.0 / 2018-10-16
 
