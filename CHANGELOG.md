@@ -1,3 +1,9 @@
+# 3.0.0 / YYYY-MM-DD
+
+## BREAKING CHANGES
+
+- Using relative paths with options --conf and --database are now relative to the current directory and not relative to the module ldap-server-mock directory.
+
 # 2.0.0 / 2018-10-16
 
 ## BREAKING CHANGES

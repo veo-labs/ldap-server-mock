@@ -1,6 +1,7 @@
 'use strict';
 
 require('./processRequire.js');
+const path = require('path');
 const nopt = require('nopt');
 const Server = process.require('lib/Server.js');
 const conf = process.require('lib/conf.js');
@@ -17,8 +18,13 @@ const processOptions = nopt(knownProcessOptions, null, process.argv);
 
 // Load database and configuration file
 try {
-  conf.server = require(processOptions.conf);
-  database.users = require(processOptions.database);
+  let confPath = processOptions.conf;
+  let databasePath = processOptions.database;
+  if (!path.isAbsolute(processOptions.conf)) confPath = path.join(process.cwd(), processOptions.conf);
+  if (!path.isAbsolute(processOptions.database)) databasePath = path.join(process.cwd(), processOptions.database);
+
+  conf.server = require(confPath);
+  database.users = require(databasePath);
 } catch (error) {
   throw new Error(`Invalid arguments: ${error.message}`);
 }
