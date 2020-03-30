@@ -9,6 +9,8 @@
 - **asn1** has been removed, it wasn't used directly
 - **ldapjs** has been upgraded from 1.0.1 to **1.0.2**
 - **nopt** has been upgraded from 4.0.1 to **4.0.3**
+- **grunt** has been upgraded from 1.0.1 to **1.1.0**
+- **grunt-cli** has been upgraded from 1.2.0 to **1.3.2**
 
 # 2.0.0 / 2018-10-16
 
