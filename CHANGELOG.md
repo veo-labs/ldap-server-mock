@@ -4,6 +4,10 @@
 
 - Using relative paths with options --conf and --database are now relative to the current directory and not relative to the module ldap-server-mock directory.
 
+## DEPENDENCIES
+
+- **asn1** has been removed, it wasn't used directly
+
 # 2.0.0 / 2018-10-16
 
 ## BREAKING CHANGES
