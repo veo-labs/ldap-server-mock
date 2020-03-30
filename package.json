@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "ldapjs": "^1.0.2",
-    "nopt": "4.0.1"
+    "nopt": "^4.0.3"
   },
   "devDependencies": {
     "grunt": "1.0.1",
