@@ -3,6 +3,7 @@
 ## BREAKING CHANGES
 
 - Using relative paths with options --conf and --database are now relative to the current directory and not relative to the module ldap-server-mock directory.
+- No longer tested on NodeJS &lt; 12.4.0 and NPM &lt; 6.9.0
 
 ## DEPENDENCIES
 
