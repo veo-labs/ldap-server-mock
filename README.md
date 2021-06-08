@@ -10,7 +10,7 @@ Really simple basic mock for [LDAP server](https://tools.ietf.org/html/rfc4511).
 
 Start a fake LDAP server with the following command:
 
-    node node_modules/ldap-server-mock/server.js --conf=/tmp/ldap-server-mock-conf.json --database=/tmp/users.json
+    npx ldap-server-mock --conf=/tmp/ldap-server-mock-conf.json --database=/tmp/users.json
 
 With:
 
