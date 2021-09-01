@@ -20,7 +20,7 @@
     "url": "https://github.com/veo-labs/ldap-server-mock.git"
   },
   "dependencies": {
-    "ldapjs": "^1.0.2",
+    "ldapjs": "^2.3.1",
     "nopt": "^4.0.3"
   },
   "devDependencies": {

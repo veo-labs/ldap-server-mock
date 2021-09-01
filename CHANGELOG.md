@@ -8,6 +8,10 @@
 
 - LDAP server mock can now be launched using npx, see README.md file
 
+## DEPENDENCIES
+
+- **ldapjs** has been upgraded from version 1.0.2 to **2.3.1**
+
 # 3.0.0 / 2020-05-04
 
 ## BREAKING CHANGES
