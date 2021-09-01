@@ -10,6 +10,9 @@
 
 ## DEPENDENCIES
 
+- **grunt** has been removed
+- **grunt-cli** has been removed
+- **grunt-eslint** has been removed
 - **ldapjs** has been upgraded from version 1.0.2 to **2.3.1**
 - **nopt** has been upgraded from version 4.0.3 to **5.0.0**
 

@@ -22,8 +22,5 @@ nbproject
 # NPM dependencies
 /node_modules
 
-# Grunt
-/.grunt
-
 # Eslint
-.eslintrc
+.eslintrc.json

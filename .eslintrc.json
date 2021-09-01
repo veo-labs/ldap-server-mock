@@ -1,5 +1,8 @@
 {
 
+  // Make this configuration file as the root one
+  "root": true,
+
   "parserOptions": {
     "ecmaFeatures": {
 
@@ -10,7 +13,10 @@
   },
 
   // Extends eslint recommended rules
-  "extends": "eslint:recommended",
+  "extends": [
+    "eslint:recommended",
+    "plugin:node/recommended"
+  ],
   "env": {
 
     // Add node.js environment globals
@@ -124,21 +130,6 @@
     // Disallow early use
     "no-use-before-define": 2,
 
-    // Disallow mixed requires
-    "no-mixed-requires": 2,
-
-    // Disallow new require
-    "no-new-require": 2,
-
-    // Disallow string concatenation when using _dirname and _filename
-    "no-path-concat": 2,
-
-    // Disallow process.exit()
-    "no-process-exit": 2,
-
-    // Disallow synchronous methods
-    "no-sync": 2,
-
     // Disallow spaces inside of brackets
     "array-bracket-spacing": 2,
 
@@ -242,7 +233,22 @@
     "max-len": [2, 120, 2, {"ignoreUrls": true}],
 
     // Disallow trailing commas
-    "comma-dangle": 2
+    "comma-dangle": 2,
+
+    // Disallow mixed requires
+    "node/no-mixed-requires": 2,
+
+    // Disallow new require
+    "node/no-new-require": 2,
+
+    // Disallow string concatenation when using _dirname and _filename
+    "node/no-path-concat": 2,
+
+    // Disallow process.exit()
+    "node/no-process-exit": 2,
+
+    // Disallow synchronous methods
+    "node/no-sync": 2
 
   }
 }
