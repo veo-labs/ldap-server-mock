@@ -33,7 +33,6 @@ try {
 
 // Set configuration default values
 conf.server.userLoginAttribute = conf.server.userLoginAttribute || 'cn';
-conf.server.searchFilter = conf.server.searchFilter || '(&(objectclass=person)(cn={{username}}))';
 conf.server.searchBase = conf.server.searchBase || 'dc=test';
 conf.server.port = conf.server.port || 3004;
 

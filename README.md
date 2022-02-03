@@ -31,8 +31,7 @@ The server configuration must be a simple JSON file.
 {
   "port": 3004, // The port the server will listen to (default to 3004)
   "userLoginAttribute": "cn", // The name of the LDAP attribute holding the user login (default to cn)
-  "searchBase": "dc=test", // The search base used by the client to fetch user trying to connect (default to dc=test)
-  "searchFilter": "(&(objectclass=person)(cn={{username}}))" // The search filter used to fetch user trying to connect with the placeholder {{username}} (default to (&(objectclass=person)(cn={{username}})))
+  "searchBase": "dc=test" // The search base used by the client to fetch user trying to connect (default to dc=test)
 }
 ```
 
@@ -63,7 +62,7 @@ With:
  - **-x** to deactivate authentication to the LDAP server
  - **-H ldap://127.0.0.1:3004** the server URL
  - **-b "dc=test"** the search base in LDAP directory, it should be the same as the **searchBase** property in server configuration above
- - **"(&(objectclass=person)(cn=user-login))"** the search filter, it should be the same as the **searchFilter** property in server configuration with **{{username}}** replaced by the user login
+ - **"(&(objectclass=person)(cn=user-login))"** the search filter
  - **attribute1, attribute2** the list of attributes you want to be returned
 
 # Contributors
