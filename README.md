@@ -30,21 +30,19 @@ The server configuration must be a simple JSON file.
 ```js
 {
   "port": 3004, // The port the server will listen to (default to 3004)
-  "userLoginAttribute": "cn", // The name of the LDAP attribute holding the user login (default to cn)
   "searchBase": "dc=test" // The search base used by the client to fetch user trying to connect (default to dc=test)
 }
 ```
 
 ## LDAP users
 
-The database user must be a simple JSON file containing an array of users. Each user must have an attribute used to authenticate himself with the same name as defined by server configuration **userLoginAttribute**.
+The database user must be a simple JSON file containing an array of users. The user must have a valid distinguished name (dn).
 A user can also have any number of other attributes which will all be returned.
 
 ```js
 [
   {
     "dn": "cn=user,dc=test", // A valid DN (Distinguished Name)
-    "cn": "user-login", // The attribute corresponding to server configuration "userLoginAttribute"
     "attribute1": "value1",
     "attribute2": "value2",
     [...]
