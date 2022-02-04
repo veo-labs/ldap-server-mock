@@ -43,6 +43,8 @@ A user can also have any number of other attributes which will all be returned.
 [
   {
     "dn": "cn=user,dc=test", // A valid DN (Distinguished Name)
+    "objectClass": "person",
+    "cn": "user-login",
     "attribute1": "value1",
     "attribute2": "value2",
     [...]
