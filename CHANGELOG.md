@@ -1,3 +1,13 @@
+# 5.0.0 / 2022-02-07
+
+## BREAKING CHANGES
+
+- Previously the returned user was the one with the value of the `userLoginAttribute` matching the value of the placeholder ̀`{{username}}` in `searchFilter` property. Other aspects of the search query were ignored. So querying a user with `(&(objectclass=person)(cn=user-login))` worked even if the user didn't have the attribute `objectclass`. So you might need to adjust attributes of the users in the database to match all aspects of the query. Also note that the server can now return several users if the query matches several users.
+
+## FEATURES
+
+- Add the ability to use dynamic search filter. Consequently `userLoginAttribute` and `searchFilter` properties are no longer required in server configuration file. Also AND (&), OR (|), NOT (!), and wildcard in the search filter are now supported. Note that the behavior for complex queries may be slightly different than an actual LDAP server instance. This feature is available thanks to [@stevenhair](https://github.com/stevenhair).
+
 # 4.0.0 / 2021-11-19
 
 ## BREAKING CHANGES
