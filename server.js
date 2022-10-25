@@ -8,6 +8,7 @@ const nopt = require('nopt');
 const Server = process.require('lib/Server.js');
 const conf = process.require('lib/conf.js');
 const database = process.require('lib/database.js');
+const fs = require('fs');
 
 // Process list of arguments
 const knownProcessOptions = {
@@ -38,5 +39,17 @@ conf.server.port = conf.server.port || 3004;
 if (!conf.server.searchBase)
   throw new Error('Missing searchBase property in configuration');
 
-const server = new Server(conf.server.port);
+let cert = null;
+let certKey = null;
+
+if (conf.server.certPath && conf.server.certKeyPath) {
+  let certPath = conf.server.certPath;
+  let certKeyPath = conf.server.certKeyPath;
+  if (!path.isAbsolute(certPath)) certPath = path.join(process.cwd(), certPath);
+  if (!path.isAbsolute(certKeyPath)) certKeyPath = path.join(process.cwd(), certKeyPath);
+  cert = fs.readFileSync(certPath, 'utf8');
+  certKey = fs.readFileSync(certKeyPath, 'utf8');  
+}
+
+const server = new Server(conf.server.port, cert, certKey);
 server.start();
