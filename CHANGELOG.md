@@ -1,3 +1,9 @@
+# 5.0.1 / YYYY-MM-DD
+
+## DEPENDENCIES
+
+- **ldapjs** has been upgraded from version 2.3.1 to **2.3.3**
+
 # 5.0.0 / 2022-02-07
 
 ## BREAKING CHANGES
