@@ -6,6 +6,7 @@
 
 ## DEPENDENCIES
 
+- **eslint** and **eslint-plugin-node** have been replaced by [Prettier](https://prettier.io/)
 - **ldapjs** has been upgraded from version 2.3.1 to **2.3.3**
 - **nopt** has been upgraded from version 5.0.0 to **7.0.0**
 

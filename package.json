@@ -24,16 +24,23 @@
     "nopt": "^7.0.0"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-plugin-node": "^11.1.0",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.7.1"
   },
   "scripts": {
-    "lint": "npx eslint \"*.js\" \"lib/**/*.js\""
+    "lint": "npx eslint \"*.js\" \"lib/**/*.js\"",
+    "format": "npx prettier --write .",
+    "format:check": "npx prettier --check ."
   },
   "precommit": [
-    "lint"
+    "format:check"
   ],
+  "prettier": {
+    "bracketSameLine": true,
+    "printWidth": 140,
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
   "engines": {
     "node": ">=16.3.0",
     "npm": ">=7.15.1"

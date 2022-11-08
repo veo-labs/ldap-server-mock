@@ -36,8 +36,7 @@ try {
 conf.server.searchBase = conf.server.searchBase || 'dc=test';
 conf.server.port = conf.server.port || 3004;
 
-if (!conf.server.searchBase)
-  throw new Error('Missing searchBase property in configuration');
+if (!conf.server.searchBase) throw new Error('Missing searchBase property in configuration');
 
 let cert = null;
 let certKey = null;
