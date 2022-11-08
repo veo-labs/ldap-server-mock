@@ -47,8 +47,8 @@ The server configuration must be a simple JSON file.
 
 ## LDAP users
 
-The database user must be a simple JSON file containing an array of users. The user must have a valid distinguished name (dn).
-A user can also have any number of other attributes which will all be returned.
+The database configuration file must be a simple JSON file containing an array of users. The user must have a valid distinguished name (dn).
+A user can also have any number of other attributes.
 
 ```js
 [
