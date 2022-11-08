@@ -29,8 +29,19 @@ The server configuration must be a simple JSON file.
 
 ```js
 {
-  "port": 3004, // The port the server will listen to (default to 3004)
-  "searchBase": "dc=test" // The search base used by the client to fetch user trying to connect (default to dc=test)
+
+  // Optional property to set the certificate's public key to run LDAP server over TLS (LDAPS)
+  "certPath": "/path/to/certificate/public/key.pem",
+
+  // Optional property to set the certificate's private key if certPath is specified
+  "certKeyPath": "/path/to/certificate/private/key.pem",
+
+  // The port the server will listen to (default to 3004)
+  "port": 3004,
+
+  // The search base used by the client to fetch user trying to connect (default to dc=test)
+  "searchBase": "dc=test"
+
 }
 ```
 
@@ -54,7 +65,7 @@ A user can also have any number of other attributes which will all be returned.
 
 ## Test a connection to the LDAP server
 
-Here is an example using the ldapsearch client from OpenLDAP with the configuration above:
+Here is an example using the `ldapsearch` client from OpenLDAP with the configuration above (without certificate):
 
     ldapsearch -x -H ldap://127.0.0.1:3004 -b "dc=test" "(&(objectclass=person)(cn=user-login))" attribute1 attribute2
 
@@ -64,6 +75,12 @@ With:
  - **-b "dc=test"** the search base in LDAP directory, it should be the same as the **searchBase** property in server configuration above
  - **"(&(objectclass=person)(cn=user-login))"** the search filter
  - **attribute1, attribute2** the list of attributes you want to be returned
+
+## Known issues
+
+### STARTTLS
+
+This mock supports running an LDAP server over TLS which is the non-standard LDAPS. However `STARTTLS` (the standard way to run an LDAP server over TLS) is not supported as the underlying [ldapjs](https://github.com/ldapjs/node-ldapjs) module has not support for it on the server side. See issue [STARTTLS support for the Server API](https://github.com/ldapjs/node-ldapjs/issues/663) for more information.
 
 # Contributors
 

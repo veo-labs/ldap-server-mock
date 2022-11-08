@@ -1,4 +1,8 @@
-# 5.0.1 / YYYY-MM-DD
+# 5.1.0 / YYYY-MM-DD
+
+## FEATURES
+
+- Add support for non standard LDAP over TLS (LDAPS not STARTTLS) thanks to [@ckhmer1](https://github.com/ckhmer1)
 
 ## DEPENDENCIES
 
