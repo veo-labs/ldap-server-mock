@@ -67,10 +67,9 @@ A user can also have any number of other attributes.
 
 Here is an example using the `ldapsearch` client from OpenLDAP with the configuration above (without certificate):
 
-    ldapsearch -x -H ldap://127.0.0.1:3004 -b "dc=test" "(&(objectclass=person)(cn=user-login))" attribute1 attribute2
+    ldapsearch -H ldap://127.0.0.1:3004 -b "dc=test" "(&(objectclass=person)(cn=user-login))" attribute1 attribute2
 
 With:
- - **-x** to deactivate authentication to the LDAP server
  - **-H ldap://127.0.0.1:3004** the server URL
  - **-b "dc=test"** the search base in LDAP directory, it should be the same as the **searchBase** property in server configuration above
  - **"(&(objectclass=person)(cn=user-login))"** the search filter
