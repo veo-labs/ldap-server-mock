@@ -47,8 +47,12 @@ if (conf.server.certPath && conf.server.certKeyPath) {
   let certKeyPath = conf.server.certKeyPath;
   if (!path.isAbsolute(certPath)) certPath = path.join(process.cwd(), certPath);
   if (!path.isAbsolute(certKeyPath)) certKeyPath = path.join(process.cwd(), certKeyPath);
+
+  // eslint-disable-next-line node/no-sync
   cert = fs.readFileSync(certPath, 'utf8');
-  certKey = fs.readFileSync(certKeyPath, 'utf8');  
+
+  // eslint-disable-next-line node/no-sync
+  certKey = fs.readFileSync(certKeyPath, 'utf8');
 }
 
 const server = new Server(conf.server.port, cert, certKey);
