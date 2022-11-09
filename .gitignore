@@ -18,3 +18,9 @@ ehthumbs.db
 
 # IDE
 nbproject
+
+# Build files
+tsconfig.tsbuildinfo
+*.map
+*.js
+*.d.ts

@@ -1,8 +1,15 @@
-# 5.1.0 / YYYY-MM-DD
+# 6.0.0 / YYYY-MM-DD
+
+## BREAKING CHANGES
+
+- Command line options `--conf` and `--database` must now respect the format `npx ldap-server-mock --conf="filePath" --database="filePath"` when something like `npx ldap-server-mock --conf filePath --database filePath` previously worked
+- Filters now use the `ldapjs` filters instead of custom implementation which requires a different JSON structure in users' configuration file. Basically all user's attributes except `dn` attribute need to be under an `attributes` object. See README.md file for more information
+- Running the LDAP server mock won't throw an error anymore when `searchBase` property is missing from server's configuration file. `searchBase` will default to `dc=test`
 
 ## FEATURES
 
 - Add support for non standard LDAP over TLS (LDAPS not STARTTLS) thanks to [@ckhmer1](https://github.com/ckhmer1)
+- Project has been fully rewritten in TypeScript
 
 ## DEPENDENCIES
 

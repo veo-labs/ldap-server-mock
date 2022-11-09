@@ -21,3 +21,6 @@ nbproject
 
 # NPM dependencies
 /node_modules
+
+# Build files
+*.map

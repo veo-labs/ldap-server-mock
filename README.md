@@ -56,11 +56,13 @@ A user can also have any number of other attributes.
 [
   {
     "dn": "cn=user,dc=test", // A valid DN (Distinguished Name)
-    "objectClass": "person",
-    "cn": "user-login",
-    "attribute1": "value1",
-    "attribute2": "value2",
-    [...]
+    "attributes": {
+      "objectClass": "person",
+      "cn": "user-login",
+      "attribute1": "value1",
+      "attribute2": "value2",
+      [...]
+    }
   }
 ]
 ```
