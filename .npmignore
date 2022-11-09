@@ -21,6 +21,3 @@ nbproject
 
 # NPM dependencies
 /node_modules
-
-# Eslint
-.eslintrc.json
