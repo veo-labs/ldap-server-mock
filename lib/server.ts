@@ -4,12 +4,14 @@ import { createServer, Server as LdapServer } from 'ldapjs';
 
 import { LdapServerMockConfiguration } from './configuration';
 import { LdapBindRequest, LdapBindResponse, LdapNext, LdapSearchRequest, LdapSearchResponse } from './ldapTypes';
+import { LdapServerMockLogger } from './logger';
 import { LdapUser } from './user';
 
 export class LdapServerMock {
   private _connectedSockets = new Set<Socket>();
   private _port: number;
   private _ldapServer: LdapServer;
+  private _logger: LdapServerMockLogger;
   private _searchBase: string;
   private _server?: Server;
 
@@ -17,7 +19,8 @@ export class LdapServerMock {
     private _users: LdapUser[],
     serverConfiguration: LdapServerMockConfiguration,
     certificatePublicKey?: Buffer,
-    certificatePrivateKey?: Buffer
+    certificatePrivateKey?: Buffer,
+    logger?: LdapServerMockLogger
   ) {
     this._port = serverConfiguration.port ?? 3004;
     this._searchBase = serverConfiguration.searchBase ?? 'dc=test';
@@ -25,6 +28,7 @@ export class LdapServerMock {
       ...(certificatePublicKey && { certificate: certificatePublicKey }),
       ...(certificatePrivateKey && { key: certificatePrivateKey })
     });
+    this._logger = logger ?? new LdapServerMockLogger();
   }
 
   /**
@@ -47,9 +51,11 @@ export class LdapServerMock {
 
         response.end();
       });
+
+      this._logger.info('starting');
       this._server = this._ldapServer.listen(this._port, () => {
         const info: AddressInfo = this._server?.address() as AddressInfo;
-        console.log('Server listening on port %i', info.port);
+        this._logger.info('started on port %i', info.port);
 
         // If process is a child process, send an event to parent process informing that the server has started
         if (process.connected && process.send) {
@@ -76,12 +82,14 @@ export class LdapServerMock {
    */
   async stop(): Promise<void> {
     return new Promise((resolve, reject) => {
+      this._logger.info('stopping');
       if (this._server) {
         for (const socket of this._connectedSockets.values()) {
           socket.destroy();
         }
 
         this._server.close(() => {
+          this._logger.info('stopped');
           resolve();
         });
       } else {
