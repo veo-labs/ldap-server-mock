@@ -10,6 +10,7 @@
 
 - Add support for non standard LDAP over TLS (LDAPS not STARTTLS) thanks to [@ckhmer1](https://github.com/ckhmer1)
 - Project has been fully rewritten in TypeScript
+- Add the ability to start / stop the server programmatically
 
 ## DEPENDENCIES
 
