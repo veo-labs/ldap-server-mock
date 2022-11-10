@@ -1,6 +1,6 @@
 {
   "name": "ldap-server-mock",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "Simple mock for LDAP server",
   "bin": "./server.js",
   "main": "./index.js",
