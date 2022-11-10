@@ -1,3 +1,9 @@
+# 6.0.1 / YYYY-MM-DD
+
+## BUG FIXES
+
+- Fix `npx ldap-server-mock --conf filePath --database filePath`. Binary file missed execution permission
+
 # 6.0.0 / 2022-11-10
 
 ## BREAKING CHANGES

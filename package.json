@@ -31,11 +31,12 @@
     "typescript": "^4.8.4"
   },
   "scripts": {
-    "build": "npm run clean ; npx tsc --build",
+    "build": "npm run clean ; npx tsc --build ; chmod +x server.js",
     "clean": "npx tsc --build --clean",
     "lint": "npx eslint \"*.js\" \"lib/**/*.js\"",
     "format": "npx prettier --write .",
     "format:check": "npx prettier --check .",
+    "prepack": "npm run build",
     "watch": "npm run build -- --watch"
   },
   "precommit": [
