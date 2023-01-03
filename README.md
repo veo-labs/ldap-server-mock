@@ -29,7 +29,6 @@ Really simple basic mock for [LDAP server](https://tools.ietf.org/html/rfc4511) 
 ### Example
 
 ```js
-{
 import * as fs from 'node:fs/promises';
 import { LdapServerMock } from 'ldap-server-mock';
 
@@ -94,7 +93,7 @@ With:
 
 The server's configuration file must be a simple JSON file:
 
-```js
+```json
 {
   "certPath": "/path/to/certificate/public/key.pem",
   "certKeyPath": "/path/to/certificate/private/key.pem",
@@ -107,18 +106,18 @@ The server's configuration file must be a simple JSON file:
 
 The database's configuration file must be a simple JSON file containing an array of users:
 
-```js
+```json
 [
   {
-    dn: 'cn=user,dc=test',
-    attributes: {
-      objectClass: 'person',
-      cn: 'user-login',
-      attribute1: 'value1',
-      attribute2: 'value2'
+    "dn": "cn=user,dc=test",
+    "attributes": {
+      "objectClass": "person",
+      "cn": "user-login",
+      "attribute1": "value1",
+      "attribute2": "value2"
     }
   }
-];
+]
 ```
 
     npx ldap-server-mock --conf=/tmp/ldap-server-mock-conf.json --database=/tmp/users.json
@@ -152,12 +151,13 @@ An LDAP user must have a valid Dinstinguished Name and any number of other attri
 
 ```js
 {
-  dn: 'cn=user,dc=test",
+  dn: 'cn=user,dc=test',
   attributes: {
     objectClass: 'person',
     cn: 'user-login',
     attribute1: 'value1',
     attribute2: 'value2'
+  }
 }
 ```
 
